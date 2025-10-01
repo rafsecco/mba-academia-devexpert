@@ -78,9 +78,14 @@ mba-modulo-03-academia-devexpert/
     cd mba-modulo-03-academia-devexpert/src/BackEnd/academia-devexpert.API/
     ```
   - Execute o projeto:
-    ```bash
-    dotnet run
-    ```
+    - Ambiente de desenvolviento:
+      ```bash
+      dotnet run
+      ```
+    - Ambiente de produção:
+      ```bash
+      dotnet run -e ASPNETCORE_ENVIRONMENT="Production"
+      ```
   - Acesse a API em:
     https://localhost:7167/
 
