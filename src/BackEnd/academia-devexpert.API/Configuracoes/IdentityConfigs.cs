@@ -2,7 +2,6 @@ using academia_devexpert.API.Data;
 using academia_devexpert.API.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -10,14 +9,9 @@ namespace academia_devexpert.API.Configuracoes;
 
 public static class IdentityConfigs
 {
-	public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configurations)
+	public static void AddIdentityConfiguration(this WebApplicationBuilder builder)
 	{
-		string strConn = configurations.GetConnectionString("DefaultConnection");
-
-		services.AddDbContext<ApplicationDbContext>(options =>
-			options.UseSqlServer(strConn));
-
-		services.AddIdentity<IdentityUser, IdentityRole>(options =>
+		builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 		{
 			options.SignIn.RequireConfirmedEmail = false;
 			options.User.RequireUniqueEmail = true;
@@ -27,13 +21,13 @@ public static class IdentityConfigs
 			.AddDefaultTokenProviders();
 
 		#region JWT
-		var appSettingsSection = configurations.GetSection("AppSettings");
-		services.Configure<AppSettings>(appSettingsSection);
+		var appSettingsSection = builder.Configuration.GetSection("AppSettings");
+		builder.Services.Configure<AppSettings>(appSettingsSection);
 
 		var appSettings = appSettingsSection.Get<AppSettings>();
 		var key = Encoding.ASCII.GetBytes(appSettings.Secret);
 
-		services.AddAuthentication(options => {
+		builder.Services.AddAuthentication(options => {
 			options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 			options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 		}).AddJwtBearer(options => {
@@ -51,7 +45,5 @@ public static class IdentityConfigs
 			};
 		});
 		#endregion
-
-		return services;
 	}
 }
