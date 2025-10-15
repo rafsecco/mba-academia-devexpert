@@ -66,7 +66,7 @@ mba-modulo-03-academia-devexpert/
 ### Passos para Execução
 
 1. **Clone o Repositório:**
-  `git clone https://github.com/rafsecco/mba-modulo-03-academia-devexpert.git`
+  `git clone https://github.com/rafsecco/mba-academia-devexpert.git`
 
 2. **Configurações:**
   - No arquivo `appsettings.json`, configure a string de conexão do SQL Server e chaves do JWT.
@@ -75,7 +75,7 @@ mba-modulo-03-academia-devexpert/
 3. **Executar a API:**
   - Entre na pasta do projeto da API:
     ```bash
-    cd mba-modulo-03-academia-devexpert/src/BackEnd/academia-devexpert.API/
+    cd mba-academia-devexpert/src/BackEnd/academia-devexpert.API/
     ```
   - Execute o projeto:
     - Ambiente de desenvolviento:
