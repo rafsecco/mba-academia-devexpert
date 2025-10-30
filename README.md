@@ -91,10 +91,11 @@ mba-modulo-03-academia-devexpert/
 
 ## 7. Documentação da API
 
-A documentação da API está disponível através do Swagger.
+A documentação da API está disponível através do Swagger (apenas para o ambiente de desenvolvimento).
 Após iniciar a API, acesse a documentação em:
 
 http://localhost:5077/swagger
+
 https://localhost:7167/swagger
 
 
