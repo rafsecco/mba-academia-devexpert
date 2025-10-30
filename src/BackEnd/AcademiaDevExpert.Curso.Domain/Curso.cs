@@ -19,6 +19,8 @@ public class Curso : Entity, IAggregateRoot
 		Valor = valor;
 		Imagem = imagem;
 		CargaHoraria = cargaHoraria;
+
+		Validar();
 	}
 
 	public void Ativar() => Ativo = true;
@@ -27,7 +29,12 @@ public class Curso : Entity, IAggregateRoot
 
 	public void Validar()
 	{
+		Validacoes.ValidarSeVazio(Titulo, "O título do curso não pode estar vazio");
+		Validacoes.ValidarSeVazio(Descricao, "A descrição do curso não pode estar vazia");
+		Validacoes.ValidarSeMenorQue(0, Valor, "O valor do curso não pode ser negativo");
+		Validacoes.ValidarSeMenorIgualQue(CargaHoraria.TotalMinutes, TimeSpan.Zero.TotalMinutes, "A carga horária do curso deve ser maior que zero");
 
+		Validacoes.ValidarTamanho(Titulo, 150, "O título do curso não pode ter mais de 150 caracteres");
+		Validacoes.ValidarTamanho(Descricao, 5000, "A descrição do curso não pode ter mais de 5000 caracteres");
 	}
-
 }
