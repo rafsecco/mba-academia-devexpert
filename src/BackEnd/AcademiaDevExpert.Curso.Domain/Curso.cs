@@ -11,8 +11,11 @@ public class Curso : Entity, IAggregateRoot
 	public string Imagem { get; private set; }
 	public TimeSpan CargaHoraria { get; private set; }
 
-	public List<Aula> Aulas { get; private set; } = new();
 	public ConteudoProgramatico ConteudoProgramatico { get; private set; }
+
+	// EF Relation
+	public ICollection<Aula> Aulas { get; private set; } = [];
+	protected Curso() { }
 
 	public Curso(string titulo, string descricao, bool ativo, decimal valor, string imagem, ConteudoProgramatico conteudoProgramatico)
 	{
