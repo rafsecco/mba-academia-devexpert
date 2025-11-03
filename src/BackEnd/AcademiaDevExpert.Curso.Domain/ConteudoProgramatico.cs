@@ -17,7 +17,7 @@ public class ConteudoProgramatico
 		Titulo = titulo;
 		Descricao = descricao;
 
-		Validacoes.ValidarSeVazio(Titulo, "O campo Título do conteúdo programático não pode estar vazio");
-		Validacoes.ValidarSeVazio(Descricao, "O campo Descrição do conteúdo programático não pode estar vazio");
+		Validacoes.ValidarSeVazio(Titulo, "O Título do conteúdo programático não pode estar vazio");
+		Validacoes.ValidarSeVazio(Descricao, "A Descrição do conteúdo programático não pode estar vazio");
 	}
 }

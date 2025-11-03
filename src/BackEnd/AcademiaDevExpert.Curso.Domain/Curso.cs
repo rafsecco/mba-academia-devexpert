@@ -45,7 +45,8 @@ public class Curso : Entity, IAggregateRoot
 	{
 		Validacoes.ValidarSeVazio(Titulo, "O título do curso não pode estar vazio");
 		Validacoes.ValidarSeVazio(Descricao, "A descrição do curso não pode estar vazia");
-		Validacoes.ValidarSeMenorQue(0, Valor, "O valor do curso não pode ser negativo");
+		Validacoes.ValidarSeMenorQue(Valor, 0, "O valor do curso não pode ser negativo");
+		Validacoes.ValidarSeVazio(Imagem, "A imagem do curso não pode estar vazia");
 		//Validacoes.ValidarSeMenorIgualQue(CargaHoraria.TotalMinutes, TimeSpan.Zero.TotalMinutes, "A carga horária do curso deve ser maior que zero");
 
 		Validacoes.ValidarTamanho(Titulo, 150, "O título do curso não pode ter mais de 150 caracteres");

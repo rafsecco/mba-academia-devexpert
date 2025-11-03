@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BC_Curso", "BC_Curso", "{4E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDevExpert.Curso.Domain", "src\BackEnd\AcademiaDevExpert.Curso.Domain\AcademiaDevExpert.Curso.Domain.csproj", "{C8961177-6373-49AE-A22D-FE87E4FC603E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDevExpert.Curso.Domain.Tests", "src\Tests\AcademiaDevExpert.Curso.Domain.Tests\AcademiaDevExpert.Curso.Domain.Tests.csproj", "{0FF895B8-60D9-4764-B180-2444C23AFFEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C8961177-6373-49AE-A22D-FE87E4FC603E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8961177-6373-49AE-A22D-FE87E4FC603E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8961177-6373-49AE-A22D-FE87E4FC603E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF895B8-60D9-4764-B180-2444C23AFFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF895B8-60D9-4764-B180-2444C23AFFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF895B8-60D9-4764-B180-2444C23AFFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF895B8-60D9-4764-B180-2444C23AFFEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{97ADC14C-A04C-4D78-B7B8-34FCA1B89E45} = {78FDC6B1-5F5A-4A9F-9F99-C1CA090F53C6}
 		{4E46BC88-9E45-4EA0-903B-20DBBFA1F659} = {C11CD401-5DB0-45D1-BC11-B4BDA1E21576}
 		{C8961177-6373-49AE-A22D-FE87E4FC603E} = {4E46BC88-9E45-4EA0-903B-20DBBFA1F659}
+		{0FF895B8-60D9-4764-B180-2444C23AFFEF} = {C0BA8B9E-B81A-4202-8B38-A8276B558D4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {914F78D4-F60F-4970-9293-7FD4A46BAFBF}
