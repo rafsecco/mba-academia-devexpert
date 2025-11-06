@@ -1,4 +1,4 @@
-namespace AcademiaDevExpert.Curso.Domain;
+namespace AcademiaDevExpert.Conteudo.Domain;
 
 public interface ICargaHorariaService : IDisposable
 {

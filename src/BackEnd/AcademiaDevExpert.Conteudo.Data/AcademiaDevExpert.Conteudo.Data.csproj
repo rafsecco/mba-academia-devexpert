@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AcademiaDevExpert.Core\AcademiaDevExpert.Core.csproj" />
-    <ProjectReference Include="..\AcademiaDevExpert.Curso.Domain\AcademiaDevExpert.Curso.Domain.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Domain\AcademiaDevExpert.Conteudo.Domain.csproj" />
   </ItemGroup>
 
 </Project>

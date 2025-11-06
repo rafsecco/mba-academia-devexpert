@@ -1,11 +1,6 @@
 using AcademiaDevExpert.Conteudo.Application.ViewModels;
-using AcademiaDevExpert.Curso.Domain;
+using AcademiaDevExpert.Conteudo.Domain;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AcademiaDevExpert.Conteudo.Application.Services;
 
@@ -32,14 +27,14 @@ public class CursoAppService : ICursoAppService
 
 	public async Task Adicionar(CursoViewModel cursoViewModel)
 	{
-		var curso = _mapper.Map<Curso.Domain.Curso>(cursoViewModel);
+		var curso = _mapper.Map<Conteudo.Domain.Curso>(cursoViewModel);
 		_cursoRepository.AdicionarCurso(curso);
 		await _cursoRepository.UnitOfWork.Commit();
 	}
 
 	public async Task Atualizar(CursoViewModel cursoViewModel)
 	{
-		var curso = _mapper.Map<Curso.Domain.Curso>(cursoViewModel);
+		var curso = _mapper.Map<Conteudo.Domain.Curso>(cursoViewModel);
 		_cursoRepository.AtualizarCurso(curso);
 		await _cursoRepository.UnitOfWork.Commit();
 	}

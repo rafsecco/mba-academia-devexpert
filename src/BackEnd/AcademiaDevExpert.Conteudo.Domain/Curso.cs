@@ -1,6 +1,6 @@
 using AcademiaDevExpert.Core.DomainObjects;
 
-namespace AcademiaDevExpert.Curso.Domain;
+namespace AcademiaDevExpert.Conteudo.Domain;
 
 public class Curso : Entity, IAggregateRoot
 {

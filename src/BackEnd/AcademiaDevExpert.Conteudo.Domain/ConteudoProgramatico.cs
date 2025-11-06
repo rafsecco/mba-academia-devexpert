@@ -1,11 +1,6 @@
 using AcademiaDevExpert.Core.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AcademiaDevExpert.Curso.Domain;
+namespace AcademiaDevExpert.Conteudo.Domain;
 
 public class ConteudoProgramatico
 {

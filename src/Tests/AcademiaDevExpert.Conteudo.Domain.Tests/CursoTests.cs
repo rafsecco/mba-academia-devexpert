@@ -1,6 +1,7 @@
 using AcademiaDevExpert.Core.DomainObjects;
+using AcademiaDevExpert.Conteudo.Domain;
 
-namespace AcademiaDevExpert.Curso.Domain.Tests;
+namespace AcademiaDevExpert.Conteudo.Domain.Tests;
 
 public class CursoTests
 {

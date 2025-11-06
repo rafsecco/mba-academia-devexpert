@@ -1,8 +1,8 @@
 using AcademiaDevExpert.Core.Data;
-using AcademiaDevExpert.Curso.Domain;
+using AcademiaDevExpert.Conteudo.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace AcademiaDevExpert.Curso.Data.Repository;
+namespace AcademiaDevExpert.Conteudo.Data.Repository;
 
 public class CursoRepository : ICursoRepository
 {

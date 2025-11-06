@@ -1,6 +1,6 @@
 using AcademiaDevExpert.Core.Data;
 
-namespace AcademiaDevExpert.Curso.Domain;
+namespace AcademiaDevExpert.Conteudo.Domain;
 
 public interface ICursoRepository : IRepository<Curso>
 {

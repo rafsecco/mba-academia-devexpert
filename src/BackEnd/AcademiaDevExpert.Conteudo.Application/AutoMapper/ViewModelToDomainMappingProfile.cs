@@ -1,6 +1,6 @@
 using AcademiaDevExpert.Conteudo.Application.ViewModels;
 using AutoMapper;
-using AcademiaDevExpert.Curso.Domain;
+using AcademiaDevExpert.Conteudo.Domain;
 
 namespace AcademiaDevExpert.Conteudo.Application.AutoMapper;
 
@@ -8,9 +8,9 @@ public class ViewModelToDomainMappingProfile : Profile
 {
 	public ViewModelToDomainMappingProfile()
 	{
-		CreateMap<CursoViewModel, Curso.Domain.Curso>()
+		CreateMap<CursoViewModel, Conteudo.Domain.Curso>()
 			.ConstructUsing(c =>
-				new Curso.Domain.Curso(
+				new Conteudo.Domain.Curso(
 					c.Titulo,
 					c.Descricao,
 					c.Ativo,

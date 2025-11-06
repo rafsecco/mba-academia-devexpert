@@ -1,8 +1,8 @@
+using AcademiaDevExpert.Conteudo.Domain;
 using AcademiaDevExpert.Core.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace AcademiaDevExpert.Curso.Data;
+namespace AcademiaDevExpert.Conteudo.Data;
 
 public class CursoContext : DbContext, IUnitOfWork
 {
@@ -10,8 +10,8 @@ public class CursoContext : DbContext, IUnitOfWork
 	{
 	}
 
-	public DbSet<Domain.Curso> Cursos { get; set; }
-	public DbSet<Domain.Aula> Aulas { get; set; }
+	public DbSet<Curso> Cursos { get; set; }
+	public DbSet<Aula> Aulas { get; set; }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcademiaDevExpert.Curso.Data\AcademiaDevExpert.Curso.Data.csproj" />
-    <ProjectReference Include="..\AcademiaDevExpert.Curso.Domain\AcademiaDevExpert.Curso.Domain.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Data\AcademiaDevExpert.Conteudo.Data.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Domain\AcademiaDevExpert.Conteudo.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
