@@ -33,6 +33,19 @@ public class Curso : Entity, IAggregateRoot
 
 	public void Desativar() => Ativo = false;
 
+	public void AcrescentarCargaHoraria(TimeSpan duracao)
+	{
+		Validacoes.ValidarSeMenorQue(duracao.Milliseconds, TimeSpan.Zero.Milliseconds, "A duração não pode ser negativa");
+		CargaHoraria += duracao;
+	}
+
+	public void DebitarCargaHoraria(TimeSpan duracao)
+	{
+		Validacoes.ValidarSeMenorQue(duracao.Milliseconds, TimeSpan.Zero.Milliseconds, "A duração não pode ser negativa");
+		CargaHoraria -= duracao;
+	}
+
+
 	public void AddAula(Aula aula)
 	{
 		Aulas.Add(aula);

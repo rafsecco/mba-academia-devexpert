@@ -14,5 +14,3 @@ public interface ICursoRepository : IRepository<Curso>
 
 	void AdicionarAula(Aula aula);
 }
-
-
