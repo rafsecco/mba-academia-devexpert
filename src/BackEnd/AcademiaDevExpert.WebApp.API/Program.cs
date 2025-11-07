@@ -8,6 +8,7 @@ builder.Services.AddSwaggerConfigureServices();
 builder.Services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(ViewModelToDomainMappingProfile));
 builder.Services.AddMediatR(typeof(Program));
 builder.Services.RegisterServices();
+builder.AddDatabaseSelector();
 
 var app = builder.Build();
 app.UseSwaggerConfiguration();
