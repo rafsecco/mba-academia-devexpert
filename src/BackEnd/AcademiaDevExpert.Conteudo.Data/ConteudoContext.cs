@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AcademiaDevExpert.Conteudo.Data;
 
-public class CursoContext : DbContext, IUnitOfWork
+public class ConteudoContext : DbContext, IUnitOfWork
 {
-	public CursoContext(DbContextOptions<CursoContext> options) : base(options)
+	public ConteudoContext(DbContextOptions<ConteudoContext> options) : base(options)
 	{
 	}
 
@@ -20,7 +20,7 @@ public class CursoContext : DbContext, IUnitOfWork
 						.Where(p => p.ClrType == typeof(string))))
 			property.SetColumnType("varchar(100)");
 
-		modelBuilder.ApplyConfigurationsFromAssembly(typeof(CursoContext).Assembly);
+		modelBuilder.ApplyConfigurationsFromAssembly(typeof(ConteudoContext).Assembly);
 		//base.OnModelCreating(modelBuilder);
 	}
 

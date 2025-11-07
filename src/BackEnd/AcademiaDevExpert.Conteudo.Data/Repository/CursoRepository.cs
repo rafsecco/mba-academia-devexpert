@@ -6,9 +6,9 @@ namespace AcademiaDevExpert.Conteudo.Data.Repository;
 
 public class CursoRepository : ICursoRepository
 {
-	private readonly CursoContext _context;
+	private readonly ConteudoContext _context;
 
-	public CursoRepository(CursoContext context)
+	public CursoRepository(ConteudoContext context)
 	{
 		_context = context;
 	}
