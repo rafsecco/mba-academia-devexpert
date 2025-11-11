@@ -7,6 +7,8 @@ public class ConteudoProgramatico
 	public string Titulo { get; private set; }
 	public string Descricao { get; private set; }
 
+	protected ConteudoProgramatico() { }
+
 	public ConteudoProgramatico(string titulo, string descricao)
 	{
 		Titulo = titulo;

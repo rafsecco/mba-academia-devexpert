@@ -1,5 +1,7 @@
+using AcademiaDevExpert.Conteudo.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Reflection.Emit;
 
 namespace AcademiaDevExpert.Conteudo.Data.Mappings;
 
@@ -25,5 +27,8 @@ public class CursoMappings : IEntityTypeConfiguration<Domain.Curso>
 		builder.HasMany(c => c.Aulas)
 			.WithOne(a => a.Curso)
 			.HasForeignKey(a => a.CursoId);
+
+		builder.OwnsOne(c => c.ConteudoProgramatico);
+
 	}
 }
