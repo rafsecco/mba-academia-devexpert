@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Application\AcademiaDevExpert.Conteudo.Application.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Data\AcademiaDevExpert.Conteudo.Data.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Domain\AcademiaDevExpert.Conteudo.Domain.csproj" />

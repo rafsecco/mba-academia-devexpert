@@ -1,6 +1,4 @@
-using AcademiaDevExpert.Core.Messages;
-
-namespace AcademiaDevExpert.Core.DomainObjects;
+namespace AcademiaDevExpert.Core.Messages.CommonMessages.DomainEvents;
 
 public class DomainEvent : Event
 {

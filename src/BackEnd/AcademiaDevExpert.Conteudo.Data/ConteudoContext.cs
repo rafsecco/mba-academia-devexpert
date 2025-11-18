@@ -26,7 +26,7 @@ public class ConteudoContext : DbContext, IUnitOfWork
 
 	public async Task<bool> Commit()
 	{
-		foreach(var entity in ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("CriadoEm") != null))
+		foreach (var entity in ChangeTracker.Entries().Where(e => e.Entity.GetType().GetProperty("CriadoEm") != null))
 		{
 			if (entity.State == EntityState.Added)
 			{

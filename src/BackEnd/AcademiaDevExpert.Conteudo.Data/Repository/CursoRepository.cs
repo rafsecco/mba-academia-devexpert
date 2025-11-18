@@ -1,5 +1,5 @@
-using AcademiaDevExpert.Core.Data;
 using AcademiaDevExpert.Conteudo.Domain;
+using AcademiaDevExpert.Core.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcademiaDevExpert.Conteudo.Data.Repository;

@@ -19,7 +19,7 @@ public class CursoAppService : ICursoAppService
 	{
 		return _mapper.Map<IEnumerable<CursoViewModel>>(await _cursoRepository.ObterTodos());
 	}
-	
+
 	public async Task<CursoViewModel> ObterPorId(Guid id)
 	{
 		return _mapper.Map<CursoViewModel>(await _cursoRepository.ObterPorId(id));

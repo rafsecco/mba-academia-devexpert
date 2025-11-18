@@ -1,4 +1,4 @@
-﻿using AcademiaDevExpert.Conteudo.Data;
+using AcademiaDevExpert.Conteudo.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace AcademiaDevExpert.WebApp.API.Configurations;

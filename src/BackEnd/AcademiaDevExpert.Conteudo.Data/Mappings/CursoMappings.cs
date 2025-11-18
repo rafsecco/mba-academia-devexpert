@@ -1,7 +1,5 @@
-using AcademiaDevExpert.Conteudo.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Reflection.Emit;
 
 namespace AcademiaDevExpert.Conteudo.Data.Mappings;
 
