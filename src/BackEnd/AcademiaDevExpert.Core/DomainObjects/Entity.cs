@@ -1,9 +1,30 @@
+using AcademiaDevExpert.Core.Messages;
+
 namespace AcademiaDevExpert.Core.DomainObjects;
 
 public abstract class Entity
 {
 	public Guid Id { get; protected set; } = Guid.NewGuid();
 	public DateTime CriadoEm { get; protected set; } = DateTime.UtcNow;
+
+	private List<Event> _notificacoes;
+	public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();
+
+	public void AdicionarEvento(Event evento)
+	{
+		_notificacoes ??= new List<Event>();
+		_notificacoes.Add(evento);
+	}
+
+	public void RemoverEvento(Event eventoItem)
+	{
+		_notificacoes?.Remove(eventoItem);
+	}
+
+	public void LimparEventos()
+	{
+		_notificacoes?.Clear();
+	}
 
 	public override bool Equals(object obj)
 	{
