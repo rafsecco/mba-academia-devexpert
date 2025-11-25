@@ -16,9 +16,9 @@ public static class DatabaseSelectorExtension
 
 		switch (builder.Environment.EnvironmentName)
 		{
-			//case "Development":
-			//	builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseSqlite(connectionString));
-			//	break;
+			case "Development":
+				builder.Services.AddDbContext<ConteudoContext>(o => o.UseSqlite(connectionString));
+				break;
 			case "Production":
 				builder.Services.AddDbContext<ConteudoContext>(o => o.UseSqlServer(connectionString));
 				break;
