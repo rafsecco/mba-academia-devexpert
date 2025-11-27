@@ -1,17 +1,18 @@
 using AcademiaDevExpert.Core.Data;
-using AcademiaDevExpert.Conteudo.Domain;
+using AcademiaDevExpert.Alunos.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace AcademiaDevExpert.Conteudo.Data;
+namespace AcademiaDevExpert.Alunos.Data;
 
-public class ConteudoContext : DbContext, IUnitOfWork
+public class AlunosContext : DbContext, IUnitOfWork
 {
-	public ConteudoContext(DbContextOptions<ConteudoContext> options) : base(options)
+
+	public AlunosContext(DbContextOptions<AlunosContext> options) : base(options)
 	{
 	}
 
-	public DbSet<Curso> Cursos { get; set; }
-	public DbSet<Aula> Aulas { get; set; }
+	public DbSet<Aluno> Alunos { get; set; }
+	public DbSet<Matricula> Matriculas { get; set; }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
@@ -20,8 +21,7 @@ public class ConteudoContext : DbContext, IUnitOfWork
 						.Where(p => p.ClrType == typeof(string))))
 			property.SetColumnType("varchar(100)");
 
-		modelBuilder.ApplyConfigurationsFromAssembly(typeof(ConteudoContext).Assembly);
-		//base.OnModelCreating(modelBuilder);
+		modelBuilder.ApplyConfigurationsFromAssembly(typeof(AlunosContext).Assembly);
 	}
 
 	public async Task<bool> Commit()

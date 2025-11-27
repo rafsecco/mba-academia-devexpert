@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AcademiaDevExpert.Alunos.Application\AcademiaDevExpert.Alunos.Application.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Alunos.Data\AcademiaDevExpert.Alunos.Data.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Alunos.Domain\AcademiaDevExpert.Alunos.Domain.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Application\AcademiaDevExpert.Conteudo.Application.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Data\AcademiaDevExpert.Conteudo.Data.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Domain\AcademiaDevExpert.Conteudo.Domain.csproj" />

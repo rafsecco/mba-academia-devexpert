@@ -1,6 +1,6 @@
 using AcademiaDevExpert.Core.DomainObjects;
 
-namespace AcademiaDevExpert.Aluno.Domain;
+namespace AcademiaDevExpert.Alunos.Domain;
 
 public class Aluno : Entity, IAggregateRoot
 {

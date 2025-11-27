@@ -1,3 +1,6 @@
+using AcademiaDevExpert.Alunos.Data;
+using AcademiaDevExpert.Alunos.Data.Repository;
+using AcademiaDevExpert.Alunos.Domain;
 using AcademiaDevExpert.Conteudo.Data;
 using AcademiaDevExpert.Conteudo.Data.Repository;
 using AcademiaDevExpert.Conteudo.Domain;
@@ -21,5 +24,9 @@ public static class DependencyInjection
 		services.AddScoped<ICursoRepository, CursoRepository>();
 		services.AddScoped<ICargaHorariaService, CargaHorariaService>();
 		services.AddScoped<ConteudoContext>();
+
+		// Alunos
+		services.AddScoped<IAlunoRepository, AlunoRepository>();
+		services.AddScoped<AlunosContext>();
 	}
 }
