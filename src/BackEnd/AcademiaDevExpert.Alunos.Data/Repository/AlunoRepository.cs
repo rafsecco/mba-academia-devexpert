@@ -27,8 +27,9 @@ public class AlunoRepository : IAlunoRepository
 		await _context.Alunos.AddAsync(aluno);
 	}
 
-	public async Task AdicionarMatricula(Matricula matricula)
+	public async Task AdicionarMatricula(Guid userId, Guid cursoId)
 	{
+		var matricula = new Matricula(userId, cursoId);
 		await _context.Matriculas.AddAsync(matricula);
 	}
 

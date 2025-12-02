@@ -7,5 +7,5 @@ public interface IAlunoRepository : IRepository<Aluno>
 	Task<IEnumerable<Aluno>> ObterTodos();
 	Task<Aluno> ObterAlunoPorId(Guid userId);
 	Task AdicionarAluno(Aluno aluno);
-	Task AdicionarMatricula(Matricula matricula);
+	Task AdicionarMatricula(Guid userId, Guid cursoId);
 }
