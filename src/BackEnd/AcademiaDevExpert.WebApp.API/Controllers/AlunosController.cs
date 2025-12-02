@@ -62,26 +62,4 @@ public class AlunosController : MainController
 			return BadRequest(new { message = ex.Message });
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
