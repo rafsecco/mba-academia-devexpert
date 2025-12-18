@@ -46,6 +46,7 @@ public class AlunosController : MainController
 	[HttpPost("{id}/{cursoId}")]
 	[ProducesResponseType(StatusCodes.Status201Created)]
 	[ProducesResponseType(StatusCodes.Status400BadRequest)]
+	[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 	public async Task<ActionResult> AdicionarMatricula(Guid id, Guid cursoId, CancellationToken cancellationToken)
 	{
 		try
