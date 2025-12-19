@@ -11,6 +11,7 @@ builder.Services.RegisterServices();
 builder.AddDatabaseSelector();
 
 var app = builder.Build();
+app.UseDbMigrationHelper();
 app.UseSwaggerConfiguration();
 app.UseHttpsRedirection();
 app.UseAuthorization();
