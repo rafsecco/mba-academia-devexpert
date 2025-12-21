@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -16,14 +16,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\AcademiaDevExpert.Alunos.Application\AcademiaDevExpert.Alunos.Application.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Alunos.Data\AcademiaDevExpert.Alunos.Data.csproj" />
+    <ProjectReference Include="..\AcademiaDevExpert.Alunos.Domain\AcademiaDevExpert.Alunos.Domain.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Application\AcademiaDevExpert.Conteudo.Application.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Data\AcademiaDevExpert.Conteudo.Data.csproj" />
     <ProjectReference Include="..\AcademiaDevExpert.Conteudo.Domain\AcademiaDevExpert.Conteudo.Domain.csproj" />

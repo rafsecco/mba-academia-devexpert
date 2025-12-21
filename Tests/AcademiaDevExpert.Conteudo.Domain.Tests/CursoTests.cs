@@ -1,5 +1,4 @@
 using AcademiaDevExpert.Core.DomainObjects;
-using AcademiaDevExpert.Conteudo.Domain;
 
 namespace AcademiaDevExpert.Conteudo.Domain.Tests;
 

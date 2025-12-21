@@ -1,0 +1,43 @@
+using AcademiaDevExpert.Financeiro.Business;
+
+namespace AcademiaDevExpert.Financeiro.AntiCorruption;
+
+public class PagamentoCartaoCreditoFacade : IPagamentoCartaoCreditoFacade
+{
+	private readonly IPayPalGateway _payPalGateway;
+	private readonly IConfigurationManager _configManager;
+
+	public PagamentoCartaoCreditoFacade(IPayPalGateway payPalGateway, IConfigurationManager configManager)
+	{
+		_payPalGateway = payPalGateway;
+		_configManager = configManager;
+	}
+
+	public Transacao RealizarPagamento(Pagamento pagamento)
+	{
+		var apiKey = _configManager.GetValue("apiKey");
+		var encriptionKey = _configManager.GetValue("encriptionKey");
+
+		var serviceKey = _payPalGateway.GetPayPalServiceKey(apiKey, encriptionKey);
+		var cardHashKey = _payPalGateway.GetCardHashKey(serviceKey, pagamento.DadosCartao.Numero);
+
+		var pagamentoResult = _payPalGateway.CommitTransaction(cardHashKey, pagamento.MatriculaId.ToString(), pagamento.Valor);
+
+		// TODO: O gateway de pagamentos que deve retornar o objeto transação
+		var transacao = new Transacao
+		{
+			MatriculaId = pagamento.MatriculaId,
+			Total = pagamento.Valor,
+			PagamentoId = pagamento.Id
+		};
+
+		if (pagamentoResult)
+		{
+			transacao.StatusTransacao = EnumStatusTransacao.Pago;
+			return transacao;
+		}
+
+		transacao.StatusTransacao = EnumStatusTransacao.Recusado;
+		return transacao;
+	}
+}

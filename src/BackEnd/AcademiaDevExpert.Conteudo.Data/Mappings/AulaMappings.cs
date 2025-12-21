@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AcademiaDevExpert.Conteudo.Data.Mappings;
 
-public class AulaMappings : IEntityTypeConfiguration<Domain.Aula>
+public class AulaMappings : IEntityTypeConfiguration<Aula>
 {
 	public void Configure(EntityTypeBuilder<Aula> builder)
 	{
