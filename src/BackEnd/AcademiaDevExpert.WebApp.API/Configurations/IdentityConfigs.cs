@@ -1,47 +1,57 @@
+using AcademiaDevExpert.WebApp.API.Data;
+using AcademiaDevExpert.WebApp.API.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Text;
+
 
 namespace AcademiaDevExpert.WebApp.API.Configurations;
 
 public static class IdentityConfigs
 {
-	public static IServiceCollection AddIdentityConfig(this IServiceCollection services,
-														WebApplicationBuilder builder)
+	public static void AddIdentityConfig(this WebApplicationBuilder builder)
 	{
 		if (builder.Environment.IsDevelopment())
 		{
-			services.AddDbContext<AuthDbContext>(options =>
-			options.UseSqlite(builder.Configuration.GetConnectionString("AuthDefaultConnection")));
+			builder.Services.AddDbContext<ApplicationDbContext>(options =>
+			options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 		}
 		else
 		{
-			services.AddDbContext<AuthDbContext>(options =>
-			options.UseSqlServer(builder.Configuration.GetConnectionString("AuthDefaultConnection")));
+			builder.Services.AddDbContext<ApplicationDbContext>(options =>
+			options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 		}
-		services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
-		{
-			options.Password.RequireNonAlphanumeric = false;
-			options.Password.RequiredLength = 8;
-			options.Password.RequireUppercase = false;
-			options.Password.RequireLowercase = false;
-			options.User.RequireUniqueEmail = true;
-			options.SignIn.RequireConfirmedAccount = false;
-			options.SignIn.RequireConfirmedEmail = false;
-			options.SignIn.RequireConfirmedPhoneNumber = false;
-		})
-	  .AddEntityFrameworkStores<AuthDbContext>()
-	  .AddDefaultTokenProviders();
 
+		builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+		{
+			// Password settings
+			//options.Password.RequireDigit = true;
+			//options.Password.RequiredLength = 8;
+			//options.Password.RequireNonAlphanumeric = true;
+			//options.Password.RequireUppercase = true;
+			//options.Password.RequireLowercase = true;
+			//options.Password.RequiredUniqueChars = 6;
+
+			//options.User.AllowedUserNameCharacters = AllowedUserNameCharacters;
+
+			//options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+			//options.Lockout.MaxFailedAccessAttempts = 3;
+
+			options.SignIn.RequireConfirmedEmail = false;
+			options.User.RequireUniqueEmail = true;
+		}).AddRoles<IdentityRole>()
+			.AddEntityFrameworkStores<ApplicationDbContext>();
 
 		// JWT
-		var appSettingsSection = builder.Configuration.GetSection("appsettings");
-		services.Configure<AppSettings>(appSettingsSection);
+		var appSettingsSection = builder.Configuration.GetSection("JwtSettings");
+		builder.Services.Configure<JwtSettings>(appSettingsSection);
 
-		var appSettings = appSettingsSection.Get<AppSettings>();
+		var appSettings = appSettingsSection.Get<JwtSettings>();
 		var key = Encoding.ASCII.GetBytes(appSettings.Secret);
 
-		services.AddAuthentication(x =>
+		builder.Services.AddAuthentication(x =>
 		{
 			x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 			x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -55,12 +65,10 @@ public static class IdentityConfigs
 				IssuerSigningKey = new SymmetricSecurityKey(key),
 				ValidateIssuer = true,
 				ValidateAudience = true,
-				ValidAudience = appSettings.ValidoEm,
-				ValidIssuer = appSettings.Emissor
+				ValidAudience = appSettings.Audience,
+				ValidIssuer = appSettings.Issuer
 			};
 		});
-
-		return services;
 	}
 }
 
